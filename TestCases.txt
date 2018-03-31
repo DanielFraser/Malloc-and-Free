@@ -1,0 +1,36 @@
+﻿User Created Test Cases
+Test Case E:
+
+
+The Fifth Test case attempts to break our free() by attempting to free all types of addresses. We choose a random between 0 and 2 to determine how we attempt to break free(). If the number is 0, we attempt to free an address of a pointer inside our char* array. If the number is 1, we first put the address of a pointer to a pointer then attempt to free that as well. Otherwise we malloc() a pointer in our char* array and then try to free that pointer a total of 10 times. This goes on until we do this 200 times.
+        
+        Output:
+        Test Case E starts------------------
+        Any combination of (200 lines):
+Error: Pointer is already free, on line 197 file ...
+Error: Invalid Pointer on line 185 file …
+Error: Invalid Pointer on line 190 file …
+Test Case E ends---------------------
+
+
+
+
+
+
+
+
+Test Case F:
+
+
+In Test Case F, our other user test case,  we attempt to max out usage by implementing techniques from test cases A - D all at once. This case attempts to oversaturate our memory eventually producing error because is it unable to allocate the needed amount of memory the malloc() has requested.
+
+
+Output:
+Test Case F starts------------------
+Error: Unable to allocate memory on line 246 file ...
+Error: Unable to allocate memory on line 246 file ...
+Error: Unable to allocate memory on line 246 file ...
+Error: Unable to allocate memory on line 246 file …
+…
+Error: Unable to allocate memory on line 246 file …
+Test Case F ends---------------------
